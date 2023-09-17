@@ -48,6 +48,7 @@ class OpenApiMerge implements OpenApiMergeInterface
             $mergedOpenApiDefinition->paths = $this->pathMerger->mergePaths(
                 $mergedOpenApiDefinition->paths,
                 $additionalDefinition->paths,
+                $additionalDefinition->security
             );
 
             if ($additionalDefinition->components === null) {
@@ -61,6 +62,11 @@ class OpenApiMerge implements OpenApiMergeInterface
             $mergedOpenApiDefinition->components->schemas = array_merge(
                 $mergedOpenApiDefinition->components->schemas ?? [],
                 $additionalDefinition->components->schemas ?? [],
+            );
+
+            $mergedOpenApiDefinition->components->securitySchemes = array_merge(
+                $mergedOpenApiDefinition->components->securitySchemes ?? [],
+                $additionalDefinition->components->securitySchemes ?? [],
             );
         }
 
