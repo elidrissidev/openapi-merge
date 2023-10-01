@@ -1,5 +1,5 @@
 {
-  "name": "marcelthole/openapi-merge",
+  "name": "elidrissidev/openapi-merge",
   "description": "Merge multiple OpenAPI YML/JSON files into one",
   "type": "application",
   "keywords": [

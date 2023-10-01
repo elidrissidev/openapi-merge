@@ -11,7 +11,7 @@ RUN apk add git \
 
 ARG COMPOSER_REQUIRE_VERSION=dev-main
 
-RUN composer global require marcelthole/openapi-merge:"$COMPOSER_REQUIRE_VERSION" \
+RUN composer global require elidrissidev/openapi-merge:"$COMPOSER_REQUIRE_VERSION" \
 	&& composer clear-cache
 
 VOLUME ["/app"]
